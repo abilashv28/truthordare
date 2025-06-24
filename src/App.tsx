@@ -59,7 +59,6 @@ export default function App() {
 	const [question, setQuestion] = useState<string>("");
 	const [history, setHistory] = useState<string[]>([]);
 	const [spinning, setSpinning] = useState(false);
-	const [spinResult, setSpinResult] = useState<"truth" | "dare" | null>(null);
 	const [angle, setAngle] = useState(0);
 
 	function getRandom(arr: string[]) {
@@ -68,10 +67,8 @@ export default function App() {
 
 	function handleSpin() {
 		setSpinning(true);
-		setSpinResult(null);
 		// Randomly pick truth or dare
 		const result = Math.random() < 0.5 ? "truth" : "dare";
-		setSpinResult(result);
 		// Calculate random spins (4-7 full spins) + final angle
 		const spins = Math.floor(Math.random() * 3) + 4; // 4 to 6 spins
 		const finalAngle = result === "truth" ? 0 : 180;
@@ -91,7 +88,6 @@ export default function App() {
 	function handleReset() {
 		setMode(null);
 		setQuestion("");
-		setSpinResult(null);
 		setAngle(0);
 	}
 
@@ -147,7 +143,6 @@ export default function App() {
 						</div>
 						<BottleSpinner
 							spinning={spinning}
-							result={spinResult}
 							onSpin={handleSpin}
 							angle={angle}
 						/>
