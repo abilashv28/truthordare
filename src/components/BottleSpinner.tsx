@@ -1,13 +1,12 @@
-import React from "react";
 
 interface BottleSpinnerProps {
   spinning: boolean;
-  result: "truth" | "dare" | null;
   onSpin: () => void;
   angle: number;
 }
 
-export default function BottleSpinner({ spinning, result, onSpin, angle }: BottleSpinnerProps) {
+
+export default function BottleSpinner({ spinning, onSpin, angle }: BottleSpinnerProps) {
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="relative w-40 h-48 flex flex-col items-center justify-center">
