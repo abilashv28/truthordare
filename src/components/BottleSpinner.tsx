@@ -5,40 +5,44 @@ interface BottleSpinnerProps {
   player2?: string;
   allPlayers?: string[];
   selectedPlayers: number[];
+  actions: {
+    handleSpin: () => void;
+    handleBackToCategory: () => void;
+    handleFullReset: () => void;
+  };
 }
 
-export default function BottleSpinner({ 
-  spinning, 
-  angle, 
+export default function BottleSpinner({
+  spinning,
+  angle,
   allPlayers,
-  selectedPlayers
+  selectedPlayers,
+  actions
 }: BottleSpinnerProps) {
   // Adjust radius based on number of players
   const playerCount = allPlayers?.length || 0;
-  // Increase radius if we have more players to prevent overlap
-  const radius = Math.min(140, 120 + (playerCount > 4 ? (playerCount - 4) * 5 : 0));
-  const centerX = 120; // px, center of bottle image
-  const centerY = 120; // px
-  
+  const radius = Math.min(120, 100 + (playerCount > 4 ? (playerCount - 4) * 8 : 0)); // adjust as needed
+  const centerX = 150; // updated from 120
+  const centerY = 150;
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-[300px] h-[300px] flex items-center justify-center overflow-visible">
         {/* Circle outline to emphasize the player circle */}
         <div className="absolute w-[260px] h-[260px] rounded-full border-2 border-gray-300/50"></div>
-        
+
         {/* Show all player names in a circle */}
         {allPlayers && allPlayers.length > 1 && allPlayers.map((name, idx) => {
           const angleDeg = (360 / allPlayers.length) * idx - 90; // start from top
           const angleRad = (angleDeg * Math.PI) / 180;
           const x = centerX + radius * Math.cos(angleRad);
           const y = centerY + radius * Math.sin(angleRad);
-          
+
           // Highlight the selected player after spinning stops
           const isSelected = !spinning && selectedPlayers.includes(idx);
-          
+
           // Adjust font size if there are many players
           const fontSize = playerCount > 6 ? 'text-xs' : 'text-sm';
-          
+
           return (
             <div
               key={name + idx}
@@ -62,8 +66,9 @@ export default function BottleSpinner({
             </div>
           );
         })}
-        
+
         <img
+          onClick={actions.handleSpin}
           src="/bottle.svg"
           alt="Spinning Bottle"
           className="w-40 h-40 drop-shadow-xl z-10"

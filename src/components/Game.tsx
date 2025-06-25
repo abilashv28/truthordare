@@ -7,19 +7,19 @@ import TruthDareModal from "./TruthDareModal";
 import { useGameLogic } from "../hooks/useGameLogic";
 
 export default function Game() {
-  const { 
-    category, 
-    mode, 
-    question, 
-    history, 
-    spinning, 
-    angle, 
-    playerCount, 
-    playerNames, 
-    namesEntered, 
-    currentPlayerIdx, 
-    selectedPlayers, 
-    showModal, 
+  const {
+    category,
+    mode,
+    question,
+    history,
+    spinning,
+    angle,
+    playerCount,
+    playerNames,
+    namesEntered,
+    currentPlayerIdx,
+    selectedPlayers,
+    showModal,
     activeModalPlayer,
     actions
   } = useGameLogic();
@@ -29,10 +29,10 @@ export default function Game() {
       <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-6 drop-shadow-lg">
         Truth or Dare
       </h1>
-      
+
       {/* Player Setup */}
       {playerCount === 0 || !namesEntered ? (
-        <PlayerSelector 
+        <PlayerSelector
           playerCount={playerCount}
           playerNames={playerNames}
           onPlayerCountChange={actions.handlePlayerCountChange}
@@ -41,12 +41,15 @@ export default function Game() {
           onBack={actions.handleBackToPlayerCount}
         />
       ) : null}
-      
+
       {/* Category Selection */}
       {playerCount > 0 && namesEntered && !category && (
-        <CategorySelector onSelectCategory={actions.handleCategorySelect} />
+        <CategorySelector actions={{
+          handleCategorySelect: actions.handleCategorySelect,
+          handleFullReset: actions.handleFullReset
+        }} />
       )}
-      
+
       {/* Bottle Spinner */}
       {category && (
         <div className="flex flex-col items-center gap-6">
@@ -61,6 +64,11 @@ export default function Game() {
               player2={selectedPlayers.length > 1 ? playerNames[selectedPlayers[1]] : undefined}
               allPlayers={playerNames}
               selectedPlayers={selectedPlayers}
+              actions={{
+                handleSpin: actions.handleSpin,
+                handleBackToCategory: actions.handleBackToCategory,
+                handleFullReset: actions.handleFullReset
+              }}
             />
           </div>
           <div className="mt-6 flex flex-col gap-3">
@@ -90,10 +98,10 @@ export default function Game() {
           </div>
         </div>
       )}
-      
+
       {/* Question Display - Only show when there's a question */}
       {category && mode && question && (
-        <QuestionDisplay 
+        <QuestionDisplay
           playerName={playerNames[currentPlayerIdx ?? 0]}
           mode={mode}
           question={question}
@@ -102,14 +110,14 @@ export default function Game() {
           onResetGame={actions.handleFullReset}
         />
       )}
-      
+
       {/* History */}
       {category && history.length > 0 && (
         <History history={history} />
       )}
-      
+
       {/* Truth or Dare Modal */}
-      <TruthDareModal 
+      <TruthDareModal
         show={showModal}
         playerNames={playerNames}
         selectedPlayers={selectedPlayers}
