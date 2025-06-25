@@ -1,33 +1,37 @@
-# React + TypeScript + Vite
+# Truth or Dare Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for playing Truth or Dare with friends, featuring multiple categories of questions and a bottle spinner.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application has been organized into a modular structure for better maintainability:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
+```
+src/
+├── components/        # UI components
+│   ├── BottleSpinner.tsx      # Spinning bottle animation
+│   ├── BlogContent.tsx        # Blog content display
+│   ├── CategorySelector.tsx   # Category selection UI
+│   ├── Game.tsx               # Main game component
+│   ├── History.tsx            # Game history display
+│   ├── Navigation.tsx         # App navigation
+│   ├── PlayerSelector.tsx     # Player selection UI
+│   ├── PlayerTurn.tsx         # Player turn UI
+│   ├── QuestionDisplay.tsx    # Question display
+│   ├── TruthDareModal.tsx     # Truth/Dare modal
+│   └── index.ts               # Component exports
+├── data/              # Data and constants
+│   ├── questions.ts           # Truth/Dare questions
+│   └── index.ts               # Data exports
+├── hooks/             # Custom React hooks
+│   ├── useAppState.ts         # Application state management
+│   ├── useGameLogic.ts        # Game logic
+│   └── index.ts               # Hook exports
+├── types/             # TypeScript type definitions
+│   └── index.ts               # Type definitions
+├── App.tsx            # Main application component
+└── main.tsx           # Application entry point
+```
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.node.json', './tsconfig.app.json'],
