@@ -1,19 +1,8 @@
-import type { GameMode } from "../types";
-
 interface QuestionDisplayProps {
-  playerName: string;
-  mode: GameMode;
-  question: string;
-  onNextTurn: () => void;
   onBackToCategories: () => void;
   onResetGame: () => void;
 }
-
 export default function QuestionDisplay({
-  playerName,
-  mode,
-  question,
-  onNextTurn,
   onBackToCategories,
   onResetGame
 }: QuestionDisplayProps) {

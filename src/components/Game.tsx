@@ -17,7 +17,6 @@ export default function Game() {
     playerCount,
     playerNames,
     namesEntered,
-    currentPlayerIdx,
     selectedPlayers,
     showModal,
     activeModalPlayer,
@@ -102,10 +101,6 @@ export default function Game() {
       {/* Question Display - Only show when there's a question */}
       {category && mode && question && (
         <QuestionDisplay
-          playerName={playerNames[currentPlayerIdx ?? 0]}
-          mode={mode}
-          question={question}
-          onNextTurn={actions.handleReset}
           onBackToCategories={actions.handleBackToCategory}
           onResetGame={actions.handleFullReset}
         />
