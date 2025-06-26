@@ -19,18 +19,6 @@ export default function QuestionDisplay({
 }: QuestionDisplayProps) {
   return (
     <div className="flex flex-col items-center gap-6">
-      <div className="text-2xl font-semibold text-gray-800 animate-fade-in">
-        {playerName}, your {mode === "truth" ? "Truth" : "Dare"}:
-      </div>
-      <div className="text-xl text-gray-700 mb-2 animate-fade-in">
-        {question}
-      </div>
-      <button
-        className="mt-2 py-2 px-6 rounded-full bg-green-500 text-white font-bold shadow hover:bg-green-600 transition"
-        onClick={onNextTurn}
-      >
-        Next Turn
-      </button>
       <button
         className="text-xs text-gray-500 underline"
         onClick={onBackToCategories}

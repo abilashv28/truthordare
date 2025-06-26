@@ -69,7 +69,7 @@ export default function BottleSpinner({
 
         <img
           onClick={actions.handleSpin}
-          src="/bottle.svg"
+          src="./bottle.svg"
           alt="Spinning Bottle"
           className="w-40 h-40 drop-shadow-xl z-10"
           style={{

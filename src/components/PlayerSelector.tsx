@@ -8,10 +8,10 @@ interface PlayerSelectorProps {
   onBack: () => void;
 }
 
-export default function PlayerSelector({ 
-  playerCount, 
-  playerNames, 
-  onPlayerCountChange, 
+export default function PlayerSelector({
+  playerCount,
+  playerNames,
+  onPlayerCountChange,
   onNameChange,
   onSubmit,
   onBack
@@ -24,6 +24,7 @@ export default function PlayerSelector({
             How many players?
           </label>
           <select
+            id="playerCountSelect"
             className="py-2 px-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
             value={playerCount}
             onChange={onPlayerCountChange}
@@ -37,7 +38,7 @@ export default function PlayerSelector({
           </select>
         </div>
       )}
-      
+
       {playerCount > 0 && (
         <div className="flex flex-col gap-4 mb-4">
           <label className="text-lg font-semibold text-gray-700 mb-2">
