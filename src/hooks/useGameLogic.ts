@@ -20,7 +20,7 @@ export function useGameLogic() {
 
   useEffect(() => {
     const storedNames = localStorage.getItem('TRUTH_OR_DARE_PLAYER_NAMES');
-    if ((!storedNames || JSON.parse(storedNames).length === 0) && playerCount > 0) {
+    if (((!storedNames || JSON.parse(storedNames).length === 0) || (JSON.parse(storedNames).length && JSON.parse(storedNames).length > 0 && JSON.parse(storedNames)[0] == "") ) && playerCount > 0) {
       const defaultNames = Array.from({ length: playerCount }, (_, i) => `Player ${i + 1}`);
       setPlayerNames(defaultNames);
     }
