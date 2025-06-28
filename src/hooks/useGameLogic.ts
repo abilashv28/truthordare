@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Category, GameMode } from "../types";
 import { questions } from "../data/questions";
+import { usePersistentState } from "./usePersistentState";
 
 export function useGameLogic() {
-  const [category, setCategory] = useState<Category | null>(null);
-  const [mode, setMode] = useState<GameMode>(null);
-  const [question, setQuestion] = useState<string>("");
-  const [history, setHistory] = useState<string[]>([]);
+  const [category, setCategory] = usePersistentState<Category | null>('TRUTH_OR_DARE_CATEGORY', null);
+  const [mode, setMode] = useState<GameMode>(null); // mode not persisted; keep useState
+  const [question, setQuestion] = useState<string>(""); // question not persisted
+  const [history, setHistory] = usePersistentState<string[]>('TRUTH_OR_DARE_HISTORY', []);
   const [spinning, setSpinning] = useState(false);
   const [angle, setAngle] = useState(0);
-  const [playerCount, setPlayerCount] = useState<number>(0);
-  const [playerNames, setPlayerNames] = useState<string[]>([]);
-  const [namesEntered, setNamesEntered] = useState(false);
-  const [currentPlayerIdx, setCurrentPlayerIdx] = useState<number | null>(null);
-  const [selectedPlayers, setSelectedPlayers] = useState<number[]>([]); // indices of 2 players
+  const [playerCount, setPlayerCount] = usePersistentState<number>('TRUTH_OR_DARE_PLAYER_COUNT', 0);
+  const [playerNames, setPlayerNames] = usePersistentState<string[]>('TRUTH_OR_DARE_PLAYER_NAMES', []);
+  const [currentPlayerIdx, setCurrentPlayerIdx] = usePersistentState<number | null>('TRUTH_OR_DARE_CURRENT_PLAYER_IDX', null);
+  const [namesEntered, setNamesEntered] = usePersistentState<boolean>('TRUTH_OR_DARE_NAMES_ENTERED', false);
+  const [selectedPlayers, setSelectedPlayers] = usePersistentState<number[]>('TRUTH_OR_DARE_SELECTED_PLAYERS', []);
   const [showModal, setShowModal] = useState(false);
   const [activeModalPlayer, setActiveModalPlayer] = useState<number | null>(null);
+
+  useEffect(() => {
+    const storedNames = localStorage.getItem('TRUTH_OR_DARE_PLAYER_NAMES');
+    if ((!storedNames || JSON.parse(storedNames).length === 0) && playerCount > 0) {
+      const defaultNames = Array.from({ length: playerCount }, (_, i) => `Player ${i + 1}`);
+      setPlayerNames(defaultNames);
+    }
+  }, [playerCount]);
 
   function getRandom(arr: string[]) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -23,20 +32,20 @@ export function useGameLogic() {
 
   function handleSpin() {
     setSpinning(true);
-    
+
     // Pick a random player
     const playerIdx = Math.floor(Math.random() * playerNames.length);
     setSelectedPlayers([playerIdx]);
     setCurrentPlayerIdx(playerIdx);
-    
+
     // Spin animation
     const spins = Math.floor(Math.random() * 3) + 4; // 4 to 6 spins
     const finalAngle = Math.floor(Math.random() * 360); // random angle for realism
     setAngle(spins * 360 + finalAngle);
-    
+
     setTimeout(() => {
       setSpinning(false);
-      
+
       // Show the modal to select Truth or Dare
       setShowModal(true);
     }, 4600);
