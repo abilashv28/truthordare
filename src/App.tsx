@@ -25,7 +25,7 @@ export default function App() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <img src="/icons/insta.svg" alt="Instagram" className="w-8 h-8" />
+              <img src="./icons/insta.svg" alt="Instagram" className="w-8 h-8" />
             </a>
             <a 
               href="https://www.facebook.com/profile.php?id=61577692898276" 
@@ -33,7 +33,7 @@ export default function App() {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <img src="/icons/meta.svg" alt="Facebook" className="w-8 h-8" />
+              <img src="./icons/meta.svg" alt="Facebook" className="w-8 h-8" />
             </a>
             <a 
               href="https://x.com/truthordarefunz?t=Vvkkc5Uptj7Moc7x4KFIww&s=08" 
@@ -41,7 +41,7 @@ export default function App() {
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
-              <img src="/icons/x.svg" alt="Twitter" className="w-8 h-8" />
+              <img src="./icons/x.svg" alt="Twitter" className="w-8 h-8" />
             </a>
           </div>
         </footer>
