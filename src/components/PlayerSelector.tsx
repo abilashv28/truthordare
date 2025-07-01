@@ -30,9 +30,9 @@ export default function PlayerSelector({
             onChange={onPlayerCountChange}
           >
             <option value={0}>Select players</option>
-            {Array.from({ length: 8 }, (_, i) => (
-              <option key={i + 1} value={i + 1}>
-                {i + 1}
+            {Array.from({ length: 7 }, (_, i) => (
+              <option key={i + 2} value={i + 2}>
+                {i + 2}
               </option>
             ))}
           </select>

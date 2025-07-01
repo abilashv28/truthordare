@@ -22,10 +22,4 @@ export interface BottleSpinnerProps {
   allPlayers?: string[];
 }
 
-export interface BlogPost {
-  id: number;
-  title: string;
-  content: string;
-  date: string;
-  slug: string;
-}
+export type { BlogPost } from './blog';

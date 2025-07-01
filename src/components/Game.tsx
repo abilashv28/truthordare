@@ -2,7 +2,6 @@ import BottleSpinner from "./BottleSpinner";
 import CategorySelector from "./CategorySelector";
 import History from "./History";
 import PlayerSelector from "./PlayerSelector";
-import QuestionDisplay from "./QuestionDisplay";
 import TruthDareModal from "./TruthDareModal";
 import { useGameLogic } from "../hooks/useGameLogic";
 
@@ -24,8 +23,8 @@ export default function Game() {
   } = useGameLogic();
 
   return (
-    <div className="bg-white/80 rounded-3xl shadow-2xl p-8 max-w-xl w-full text-center mx-auto">
-      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-6 drop-shadow-lg">
+    <div className="bg-white/80 rounded-3xl shadow-2xl p-6 pt-4 max-w-xl w-full text-center mx-auto">
+      <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-4 drop-shadow-lg">
         Truth or Dare
       </h1>
 
@@ -43,10 +42,13 @@ export default function Game() {
 
       {/* Category Selection */}
       {playerCount > 0 && namesEntered && !category && (
-        <CategorySelector actions={{
-          handleCategorySelect: actions.handleCategorySelect,
-          handleFullReset: actions.handleFullReset
-        }} />
+        <CategorySelector
+          actions={{
+            handleCategorySelect: actions.handleCategorySelect,
+            handleFullReset: actions.handleFullReset,
+            handleBackToPlayerNames: actions.handleBackToPlayerNames
+          }}
+        />
       )}
 
       {/* Bottle Spinner */}
@@ -74,23 +76,17 @@ export default function Game() {
             <button
               className="py-3 px-8 rounded-full bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold shadow-lg hover:from-green-600 hover:to-teal-600 transition transform hover:scale-105 active:scale-95"
               onClick={actions.handleSpin}
-              disabled={spinning}
-            >
+              disabled={spinning}>
               {spinning ? "Spinning..." : "Spin the Bottle"}
             </button>
             <div className="flex justify-center gap-4 mt-2">
               <button
                 className="text-sm text-gray-500 hover:text-gray-700 underline transition"
                 onClick={actions.handleBackToCategory}
-                disabled={spinning}
-              >
+                disabled={spinning}>
                 Back to Categories
               </button>
-              <button
-                className="text-sm text-red-500 hover:text-red-700 underline transition"
-                onClick={actions.handleFullReset}
-                disabled={spinning}
-              >
+              <button className="text-sm text-red-500 hover:text-red-700 underline transition" onClick={actions.handleFullReset} disabled={spinning}>
                 Reset Game
               </button>
             </div>
@@ -98,18 +94,8 @@ export default function Game() {
         </div>
       )}
 
-      {/* Question Display - Only show when there's a question */}
-      {category && mode && question && (
-        <QuestionDisplay
-          onBackToCategories={actions.handleBackToCategory}
-          onResetGame={actions.handleFullReset}
-        />
-      )}
-
       {/* History */}
-      {category && history.length > 0 && (
-        <History history={history} />
-      )}
+      {category && history.length > 0 && <History history={history} />}
 
       {/* Truth or Dare Modal */}
       <TruthDareModal

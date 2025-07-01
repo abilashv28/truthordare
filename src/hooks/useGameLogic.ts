@@ -20,7 +20,7 @@ export function useGameLogic() {
 
   useEffect(() => {
     const storedNames = localStorage.getItem('TRUTH_OR_DARE_PLAYER_NAMES');
-    if (((!storedNames || JSON.parse(storedNames).length === 0) || (JSON.parse(storedNames).length && JSON.parse(storedNames).length > 0 && JSON.parse(storedNames)[0] == "") ) && playerCount > 0) {
+    if (((!storedNames || JSON.parse(storedNames).length === 0) || (JSON.parse(storedNames).length && JSON.parse(storedNames).length > 0 && JSON.parse(storedNames)[0] == "") ) && playerCount >= 2) {
       const defaultNames = Array.from({ length: playerCount }, (_, i) => `Player ${i + 1}`);
       setPlayerNames(defaultNames);
     }
@@ -121,6 +121,12 @@ export function useGameLogic() {
     setPlayerNames([]);
   }
 
+  function handleBackToPlayerNames() {
+    // Reset category but keep player names, just toggle namesEntered flag
+    setCategory(null);
+    setNamesEntered(false);
+  }
+
   function handleNameChange(e: React.ChangeEvent<HTMLInputElement>, index: number) {
     const names = [...playerNames];
     names[index] = e.target.value;
@@ -164,7 +170,8 @@ export function useGameLogic() {
       handleNameChange,
       handleNameSubmit,
       handleNextPlayer,
-      handleBackToPlayerCount
+      handleBackToPlayerCount,
+      handleBackToPlayerNames
     }
   };
 }
