@@ -17,7 +17,6 @@ src/
 │   ├── Navigation.tsx         # App navigation
 │   ├── PlayerSelector.tsx     # Player selection UI
 │   ├── PlayerTurn.tsx         # Player turn UI
-│   ├── QuestionDisplay.tsx    # Question display
 │   ├── TruthDareModal.tsx     # Truth/Dare modal
 │   └── index.ts               # Component exports
 ├── data/              # Data and constants
