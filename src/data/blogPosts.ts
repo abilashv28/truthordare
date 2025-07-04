@@ -2,14 +2,6 @@ import type { BlogPost } from "../types/blog";
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 1,
-    title: "The History of Truth or Dare",
-    content:
-      "Truth or Dare is a classic party game that has been entertaining people for generations. Learn about its fascinating origins and how it evolved into the beloved truth or dare game for friends/couples we know today. Discover how people play truth or dare online in modern formats and how it's become one of the top party games online.",
-    date: "2025-06-25",
-    slug: "history-of-truth-or-dare",
-  },
-  {
     id: 2,
     title: "Top 10 Truth or Dare Questions for Family Fun",
     content:
@@ -56,5 +48,13 @@ export const blogPosts: BlogPost[] = [
       "Discover the convenience of playing Truth or Dare with a digital spinner instead of a physical bottle. Learn how virtual spinners make the game more accessible, fair, and engaging whether you're playing online or in person. Perfect for virtual gatherings, parties where a bottle isn't practical, or when you want a more customizable gameplay experience. No physical bottle needed - just use our digital spinner for a modern twist on this classic game!",
     date: "2025-06-30",
     slug: "digital-spinner-no-bottle"
+  },
+  {
+    id: 8,
+    title: "Truth or Dare Now in Multiple Languages: EN, FR, ES",
+    content:
+      "Play Truth or Dare like never before — now available in English, French, and Spanish! Whether you're hosting an international party, practicing a new language, or just want to spice up the fun, our truth or dare questions and dares are fully translated for you. Enjoy seamless gameplay across languages and bring everyone together, no matter where they're from.",
+    date: "2025-07-04",
+    slug: "truth-or-dare-multi-language"
   }
 ];

@@ -1,0 +1,50 @@
+{
+  "normal": {
+    "truths": [
+      "🎨 What is your favorite color? 🎨",
+      "🙊 Have you ever lied to your parents? 🙊",
+      "🍕 What is your favorite food? 🍕",
+      "😱 What is your biggest fear? 😱",
+      "🎬 What is your favorite movie? 🎬"
+    ],
+    "dares": [
+      "🎵 Sing a song! 🎵",
+      "👯 Do a funny dance! 👯",
+      "📞 Call a friend and speak in a funny voice! 📞",
+      "😂 Tell a joke! 😂",
+      "🍌 Eat a piece of fruit as dramatically as possible! 🍌"
+    ]
+  },
+  "teenage": {
+    "truths": [
+      "💌 Who was your first crush? 💌",
+      "💏 Have you ever kissed someone? 💏",
+      "📱 What's the most embarrassing thing in your search history? 📱",
+      "👀 Who do you secretly admire? 👀",
+      "🤦‍♀️ What's your most embarrassing moment? 🤦‍♀️"
+    ],
+    "dares": [
+      "📱 Show the last 5 photos on your phone! 📱",
+      "📞 Text your crush or a friend something silly! 📞",
+      "👻 Do your best impression of a ghost! 👻",
+      "🎤 Sing the chorus of your favorite song! 🎤",
+      "🤳 Take a silly selfie and show everyone! 🤳"
+    ]
+  },
+  "spicy": {
+    "truths": [
+      "💋 Have you ever kissed on the first date? 💋",
+      "🌙 What's your favorite romantic setting? 🌙",
+      "💭 What's your ideal romantic date? 💭",
+      "❤️ What's the most romantic thing you've ever done? ❤️",
+      "😘 What's your best quality in a relationship? 😘"
+    ],
+    "dares": [
+      "📝 Write a short romantic poem for someone in the room! 📝",
+      "👄 Give a genuine compliment to everyone in the room! 👄",
+      "🍦 Feed another player a snack! 🍦",
+      "💃 Do a slow dance with an imaginary partner! 💃",
+      "🎭 Act out a romantic scene from a movie! 🎭"
+    ]
+  }
+}

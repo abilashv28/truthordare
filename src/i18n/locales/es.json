@@ -1,0 +1,62 @@
+{
+  "app": {
+    "title": "Verdad o Reto",
+    "category": "Categoría",
+    "spinning": "Girando...",
+    "spinBottle": "Girar la Botella",
+    "backToCategories": "Volver a Categorías",
+    "resetGame": "Reiniciar Juego",
+    "history": "Historial"
+  },
+  "player": {
+    "setup": "Configuración de Jugadores",
+    "count": "Número de Jugadores",
+    "names": "Nombres de Jugadores",
+    "selectPlayers": "Seleccionar jugadores",
+    "defaultName": "Jugador",
+    "choose": "elige",
+    "playerNamePlaceholder": "Nombre del jugador {{number}}"
+  },
+  "categories": {
+    "family": "Familia",
+    "friends": "Amigos",
+    "party": "Fiesta",
+    "couples": "Parejas",
+    "normal": "Normal",
+    "teenage": "Adolescente",
+    "spicy": "Picante"
+  },
+  "actions": {
+    "truth": "Verdad",
+    "dare": "Reto",
+    "skip": "Saltar",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "back": "Atrás"
+  },
+  "questions": {
+    "willAsk": "preguntará a"
+  },
+  "navigation": {
+    "game": "Jugar",
+    "blog": "Blog",
+    "secretMessage": "Mensaje Secreto"
+  },
+  "blog": {
+    "readMore": "Leer más →",
+    "backToBlog": "← Volver al Blog",
+    "postNotFound": "Publicación No Encontrada",
+    "postNotFoundMessage": "Lo sentimos, la publicación de blog que buscas no existe.",
+    "fullContentNote": "Aquí es donde se mostraría el contenido completo de la publicación del blog. En una aplicación real, tendrías un contenido mucho más detallado aquí, posiblemente con formato, imágenes y otros elementos.",
+    "popularGameNote": "Verdad o Reto es uno de los juegos de fiesta más populares, perfecto para amigos, parejas y reuniones familiares. Ya sea que juegues verdad o reto en línea o en persona, es una excelente manera de conocerse mejor y divertirse.",
+    "spinner": {
+      "title": "Ruleta Digital para Verdad o Reto (¡Sin Necesidad de Botella!)"
+    }
+  },
+  "language": {
+    "selector": "Seleccionar idioma",
+    "english": "Inglés",
+    "french": "Francés",
+    "spanish": "Español"
+  }
+}

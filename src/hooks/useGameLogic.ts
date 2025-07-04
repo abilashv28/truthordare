@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import type { Category, GameMode } from "../types";
-import { questions } from "../data/questions";
 import { usePersistentState } from "./usePersistentState";
+import { getTranslatedQuestion } from "../i18n/questionTranslations";
+import i18n from "../i18n/i18n";
 
 export function useGameLogic() {
   const [category, setCategory] = usePersistentState<Category | null>('TRUTH_OR_DARE_CATEGORY', null);
@@ -21,14 +22,12 @@ export function useGameLogic() {
   useEffect(() => {
     const storedNames = localStorage.getItem('TRUTH_OR_DARE_PLAYER_NAMES');
     if (((!storedNames || JSON.parse(storedNames).length === 0) || (JSON.parse(storedNames).length && JSON.parse(storedNames).length > 0 && JSON.parse(storedNames)[0] == "") ) && playerCount >= 2) {
-      const defaultNames = Array.from({ length: playerCount }, (_, i) => `Player ${i + 1}`);
+      // Get translated "Player" text if available, fallback to English
+      const playerText = i18n.t('player.defaultName', { defaultValue: 'Player' });
+      const defaultNames = Array.from({ length: playerCount }, (_, i) => `${playerText} ${i + 1}`);
       setPlayerNames(defaultNames);
     }
-  }, [playerCount]);
-
-  function getRandom(arr: string[]) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+  }, [playerCount, setPlayerNames]);
 
   function handleSpin() {
     setSpinning(true);
@@ -54,10 +53,8 @@ export function useGameLogic() {
   function handlePlayerChoice(choice: "truth" | "dare", playerIdx: number) {
     if (category) {
       setMode(choice);
-      const q =
-        choice === "truth"
-          ? getRandom(questions[category].truths)
-          : getRandom(questions[category].dares);
+      // Get a translated question based on the current language
+      const q = getTranslatedQuestion(category, choice);
       setQuestion(q);
       setHistory([`${playerNames[playerIdx]}: ${q}`, ...history]);
       setActiveModalPlayer(playerIdx);

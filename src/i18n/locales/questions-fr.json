@@ -1,0 +1,50 @@
+{
+  "normal": {
+    "truths": [
+      "🎨 Quelle est ta couleur préférée? 🎨",
+      "🙊 As-tu déjà menti à tes parents? 🙊",
+      "🍕 Quel est ton plat préféré? 🍕",
+      "😱 Quelle est ta plus grande peur? 😱",
+      "🎬 Quel est ton film préféré? 🎬"
+    ],
+    "dares": [
+      "🎵 Chante une chanson! 🎵",
+      "👯 Fais une danse amusante! 👯",
+      "📞 Appelle un ami et parle avec une voix drôle! 📞",
+      "😂 Raconte une blague! 😂",
+      "🍌 Mange un fruit de façon très dramatique! 🍌"
+    ]
+  },
+  "teenage": {
+    "truths": [
+      "💌 Qui était ton premier béguin? 💌",
+      "💏 As-tu déjà embrassé quelqu'un? 💏",
+      "📱 Quelle est la chose la plus embarrassante dans ton historique de recherche? 📱",
+      "👀 Qui admires-tu secrètement? 👀",
+      "🤦‍♀️ Quel est ton moment le plus gênant? 🤦‍♀️"
+    ],
+    "dares": [
+      "📱 Montre les 5 dernières photos sur ton téléphone! 📱",
+      "📞 Envoie un message ridicule à ton crush ou à un ami! 📞",
+      "👻 Fais ta meilleure imitation d'un fantôme! 👻",
+      "🎤 Chante le refrain de ta chanson préférée! 🎤",
+      "🤳 Prends un selfie idiot et montre-le à tout le monde! 🤳"
+    ]
+  },
+  "spicy": {
+    "truths": [
+      "💋 As-tu déjà embrassé au premier rendez-vous? 💋",
+      "🌙 Quel est ton cadre romantique préféré? 🌙",
+      "💭 Quel est ton rendez-vous romantique idéal? 💭",
+      "❤️ Quelle est la chose la plus romantique que tu aies jamais faite? ❤️",
+      "😘 Quelle est ta meilleure qualité dans une relation? 😘"
+    ],
+    "dares": [
+      "📝 Écris un petit poème romantique pour quelqu'un dans la pièce! 📝",
+      "👄 Fais un compliment sincère à chaque personne dans la pièce! 👄",
+      "🍦 Nourris un autre joueur avec une collation! 🍦",
+      "💃 Fais une danse lente avec un partenaire imaginaire! 💃",
+      "🎭 Joue une scène romantique d'un film! 🎭"
+    ]
+  }
+}

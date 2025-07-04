@@ -7,4 +7,5 @@ export { default as History } from './History';
 export { default as Navigation } from './Navigation';
 export { default as PlayerSelector } from './PlayerSelector';
 export { default as PlayerTurn } from './PlayerTurn';
+export { default as QuestionDisplay } from './QuestionDisplay';
 export { default as TruthDareModal } from './TruthDareModal';

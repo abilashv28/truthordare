@@ -1,0 +1,62 @@
+{
+  "app": {
+    "title": "Action ou Vérité",
+    "category": "Catégorie",
+    "spinning": "Rotation...",
+    "spinBottle": "Tourner la Bouteille",
+    "backToCategories": "Retour aux Catégories",
+    "resetGame": "Réinitialiser le Jeu",
+    "history": "Historique"
+  },
+  "player": {
+    "setup": "Configuration des Joueurs",
+    "count": "Nombre de Joueurs",
+    "names": "Noms des Joueurs",
+    "selectPlayers": "Sélectionner des joueurs",
+    "defaultName": "Joueur",
+    "choose": "choisissez",
+    "playerNamePlaceholder": "Nom du joueur {{number}}"
+  },
+  "categories": {
+    "family": "Famille",
+    "friends": "Amis",
+    "party": "Fête",
+    "couples": "Couples",
+    "normal": "Normal",
+    "teenage": "Adolescent",
+    "spicy": "Épicé"
+  },
+  "actions": {
+    "truth": "Vérité",
+    "dare": "Action",
+    "skip": "Passer",
+    "next": "Suivant",
+    "submit": "Soumettre",
+    "back": "Retour"
+  },
+  "questions": {
+    "willAsk": "va demander à"
+  },
+  "navigation": {
+    "game": "Jouer",
+    "blog": "Blog",
+    "secretMessage": "Message Secret"
+  },
+  "blog": {
+    "readMore": "Lire la suite →",
+    "backToBlog": "← Retour au Blog",
+    "postNotFound": "Article Non Trouvé",
+    "postNotFoundMessage": "Désolé, l'article de blog que vous recherchez n'existe pas.",
+    "fullContentNote": "C'est ici que le contenu complet de l'article de blog serait affiché. Dans une véritable application, vous auriez un contenu beaucoup plus détaillé ici, éventuellement avec du formatage, des images et d'autres éléments.",
+    "popularGameNote": "Action ou Vérité est l'un des jeux de société les plus populaires, parfait pour les amis, les couples et les réunions de famille. Que vous jouiez à action ou vérité en ligne ou en personne, c'est un excellent moyen d'en apprendre davantage les uns sur les autres et de vous amuser.",
+    "spinner": {
+      "title": "Roulette Numérique pour Action ou Vérité (Pas Besoin de Bouteille !)"
+    }
+  },
+  "language": {
+    "selector": "Choisir la langue",
+    "english": "Anglais",
+    "french": "Français",
+    "spanish": "Espagnol"
+  }
+}

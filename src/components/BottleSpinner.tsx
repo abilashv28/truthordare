@@ -58,7 +58,6 @@ export default function BottleSpinner({
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 zIndex: isSelected ? 20 : 5,
-                // Add a slight border to ensure visibility
                 border: '1px solid rgba(0,0,0,0.1)'
               }}
             >

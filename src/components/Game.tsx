@@ -3,9 +3,12 @@ import CategorySelector from "./CategorySelector";
 import History from "./History";
 import PlayerSelector from "./PlayerSelector";
 import TruthDareModal from "./TruthDareModal";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { useGameLogic } from "../hooks/useGameLogic";
+import { useTranslation } from "react-i18next";
 
 export default function Game() {
+  const { t } = useTranslation();
   const {
     category,
     mode,
@@ -24,9 +27,14 @@ export default function Game() {
 
   return (
     <div className="bg-white/80 rounded-3xl shadow-2xl p-6 pt-4 max-w-xl w-full text-center mx-auto">
-      <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 mb-4 drop-shadow-lg">
-        Truth or Dare
-      </h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-500 drop-shadow-lg">
+          {t('app.title')}
+        </h1>
+        <div className="scale-90 transform-origin-right">
+          <LanguageSwitcher />
+        </div>
+      </div>
 
       {/* Player Setup */}
       {playerCount === 0 || !namesEntered ? (
@@ -55,7 +63,7 @@ export default function Game() {
       {category && (
         <div className="flex flex-col items-center gap-6">
           <div className="text-lg font-semibold text-gray-700 mb-4">
-            Category: <span className="capitalize">{category}</span>
+            {t('app.category')}: <span className="capitalize">{t(`categories.${category}`)}</span>
           </div>
           <div className="w-full max-w-[340px] h-[340px] relative mx-auto mb-2">
             <BottleSpinner
@@ -72,22 +80,21 @@ export default function Game() {
               }}
             />
           </div>
-          <div className="mt-6 flex flex-col gap-3">
-            <button
+          <div className="mt-6 flex flex-col gap-3">              <button
               className="py-3 px-8 rounded-full bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold shadow-lg hover:from-green-600 hover:to-teal-600 transition transform hover:scale-105 active:scale-95"
               onClick={actions.handleSpin}
               disabled={spinning}>
-              {spinning ? "Spinning..." : "Spin the Bottle"}
+              {spinning ? t('app.spinning') : t('app.spinBottle')}
             </button>
             <div className="flex justify-center gap-4 mt-2">
               <button
                 className="text-sm text-gray-500 hover:text-gray-700 underline transition"
                 onClick={actions.handleBackToCategory}
                 disabled={spinning}>
-                Back to Categories
+                {t('app.backToCategories')}
               </button>
               <button className="text-sm text-red-500 hover:text-red-700 underline transition" onClick={actions.handleFullReset} disabled={spinning}>
-                Reset Game
+                {t('app.resetGame')}
               </button>
             </div>
           </div>

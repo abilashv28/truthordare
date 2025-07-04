@@ -4,9 +4,11 @@ import BlogPost from "./components/BlogPost";
 import Navigation from "./components/Navigation";
 import { useAppState } from "./hooks/useAppState";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function App() {
   const { view, toggleView } = useAppState();
+  const { t } = useTranslation();
 
   return (
     <BrowserRouter>
@@ -25,7 +27,7 @@ export default function App() {
             </Routes>
 
             <footer className="mt-8 text-gray-500 text-xs text-center">
-              &copy; {new Date().getFullYear()} Truth or Dare Game
+              &copy; {new Date().getFullYear()} {t('app.title')}
               <div className="flex justify-center gap-4 mt-2 text-xl">
                 <a
                   href="https://www.instagram.com/truthordarefunzzz?igsh=MWVkY3EwOXd5aHMxNA=="

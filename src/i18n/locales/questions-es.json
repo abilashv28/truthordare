@@ -1,0 +1,50 @@
+{
+  "normal": {
+    "truths": [
+      "🎨 ¿Cuál es tu color favorito? 🎨",
+      "🙊 ¿Alguna vez has mentido a tus padres? 🙊",
+      "🍕 ¿Cuál es tu comida favorita? 🍕",
+      "😱 ¿Cuál es tu mayor miedo? 😱",
+      "🎬 ¿Cuál es tu película favorita? 🎬"
+    ],
+    "dares": [
+      "🎵 ¡Canta una canción! 🎵",
+      "👯 ¡Haz un baile divertido! 👯",
+      "📞 ¡Llama a un amigo y habla con una voz graciosa! 📞",
+      "😂 ¡Cuenta un chiste! 😂",
+      "🍌 ¡Come una fruta de la manera más dramática posible! 🍌"
+    ]
+  },
+  "teenage": {
+    "truths": [
+      "💌 ¿Quién fue tu primer amor? 💌",
+      "💏 ¿Alguna vez has besado a alguien? 💏",
+      "📱 ¿Qué es lo más vergonzoso en tu historial de búsqueda? 📱",
+      "👀 ¿A quién admiras en secreto? 👀",
+      "🤦‍♀️ ¿Cuál es tu momento más vergonzoso? 🤦‍♀️"
+    ],
+    "dares": [
+      "📱 ¡Muestra las últimas 5 fotos de tu teléfono! 📱",
+      "📞 ¡Envía un mensaje tonto a tu crush o a un amigo! 📞",
+      "👻 ¡Haz tu mejor imitación de un fantasma! 👻",
+      "🎤 ¡Canta el coro de tu canción favorita! 🎤",
+      "🤳 ¡Tómate una selfie tonta y muéstrala a todos! 🤳"
+    ]
+  },
+  "spicy": {
+    "truths": [
+      "💋 ¿Alguna vez has besado en la primera cita? 💋",
+      "🌙 ¿Cuál es tu escenario romántico favorito? 🌙",
+      "💭 ¿Cuál es tu cita romántica ideal? 💭",
+      "❤️ ¿Qué es lo más romántico que has hecho? ❤️",
+      "😘 ¿Cuál es tu mejor cualidad en una relación? 😘"
+    ],
+    "dares": [
+      "📝 ¡Escribe un pequeño poema romántico para alguien en la habitación! 📝",
+      "👄 ¡Da un cumplido sincero a todos en la habitación! 👄",
+      "🍦 ¡Alimenta a otro jugador con un bocadillo! 🍦",
+      "💃 ¡Haz un baile lento con una pareja imaginaria! 💃",
+      "🎭 ¡Actúa una escena romántica de una película! 🎭"
+    ]
+  }
+}
